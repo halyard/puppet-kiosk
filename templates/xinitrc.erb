@@ -1,0 +1,15 @@
+#!/usr/bin/sh
+
+xset -dpms
+xset s off
+xset s noblank
+
+URL='<%= @url %>'
+
+firefox --kiosk "$URL" &
+
+sleep 10
+
+xdotool search --name ".*Mozilla Firefox" windowsize 1920 1080
+
+wait

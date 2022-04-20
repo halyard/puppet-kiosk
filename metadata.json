@@ -1,0 +1,16 @@
+{
+  "name": "halyard-kiosk",
+  "version": "0.0.1",
+  "author": "Les Aker",
+  "license": "MIT",
+  "summary": "Configure kiosk display",
+  "source": "https://github.com/halyard/puppet-kiosk",
+  "project_page": "https://github.com/halyard/puppet-kiosk",
+  "issues_url": "https://github.com/halyard/puppet-kiosk/issues",
+  "dependencies": [
+
+  ],
+  "operatingsystem_support": [
+
+  ]
+}
