@@ -19,9 +19,9 @@ class kiosk (
   }
 
   file { "/home/${username}/.xinitrc":
-    ensure   => file,
-    contents => template('kiosk/xinitrc.erb'),
-    owner    => $username,
+    ensure  => file,
+    content => template('kiosk/xinitrc.erb'),
+    owner   => $username,
   }
 
   file { "/home/${username}/.bashrc":
@@ -35,7 +35,7 @@ class kiosk (
   }
 
   file { '/etc/systemd/system/getty@tty1.service.d/autologin.conf':
-    ensure   => file,
-    contents => template('kiosk/autologin.erb'),
+    ensure  => file,
+    content => template('kiosk/autologin.erb'),
   }
 }
