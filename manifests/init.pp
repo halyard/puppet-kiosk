@@ -12,7 +12,7 @@ class kiosk (
       'firefox',
       'xorg-server',
       'xorg-xinit',
-      'xorg-xset'
+      'xorg-xset',
       'xdotool',
       'xf86-video-fbdev',
   ]: }
