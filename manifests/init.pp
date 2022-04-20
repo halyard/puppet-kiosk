@@ -2,6 +2,8 @@
 #
 # @param url sets the page to display
 # @param username sets the username for the kiosk install
+# @param hdmi_mode sets the HDMI resolution for the display
+# @param hdmi_rpi4 enables 4k60 for the RPi4
 class kiosk (
   String $url,
   String $username = 'kiosk',
