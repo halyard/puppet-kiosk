@@ -9,6 +9,9 @@ class kiosk (
   package { [
       'firefox',
       'xorg-server',
+      'xorg-xinit',
+      'xorg-xrandr',
+      'xdotool',
       'xf86-video-vesa',
   ]: }
 
