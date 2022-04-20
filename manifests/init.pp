@@ -1,19 +1,20 @@
 # @summary Configure kiosk display
 #
 # @param url sets the page to display
-class kiosk(
+# @param username sets the username for the kiosk install
+class kiosk (
   String $url,
   String $username = 'kiosk',
 ) {
   package { [
-    'firefox',
-    'xorg-server',
-    'xf86-video-vesa',
+      'firefox',
+      'xorg-server',
+      'xf86-video-vesa',
   ]: }
 
   user { $username:
-    ensure => present,
-    home   => "/home/${username}",
+    ensure     => present,
+    home       => "/home/${username}",
     managehome => true,
   }
 
