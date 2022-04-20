@@ -2,21 +2,19 @@
 #
 # @param url sets the page to display
 # @param username sets the username for the kiosk install
-# @param hdmi_mode sets the HDMI resolution for the display
-# @param hdmi_rpi4 enables 4k60 for the RPi4
 # @param resolution sets the screen size for the kiosk
 class kiosk (
   String $url,
   String $username = 'kiosk',
-  String $hdmi_mode = '97',
-  Boolean $hdmi_rpi4 = true,
   String $resolution = '3840 2160',
 ) {
   package { [
       'firefox',
       'xorg-server',
       'xorg-xinit',
+      'xorg-xset'
       'xdotool',
+      'xf86-video-fbdev',
   ]: }
 
   user { $username:
