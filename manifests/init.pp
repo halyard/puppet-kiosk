@@ -5,6 +5,8 @@
 class kiosk (
   String $url,
   String $username = 'kiosk',
+  String $hdmi_mode = '97',
+  Boolean $hdmi_rpi4 = true,
 ) {
   package { [
       'firefox',
@@ -12,7 +14,7 @@ class kiosk (
       'xorg-xinit',
       'xorg-xrandr',
       'xdotool',
-      'xf86-video-vesa',
+      'xf86-video-fbdev',
   ]: }
 
   user { $username:
@@ -40,5 +42,10 @@ class kiosk (
   file { '/etc/systemd/system/getty@tty1.service.d/autologin.conf':
     ensure  => file,
     content => template('kiosk/autologin.erb'),
+  }
+
+  file { '/boot/config.txt':
+    ensure  => file,
+    content => template('kiosk/config.txt.erb'),
   }
 }
