@@ -9,14 +9,13 @@ class kiosk (
   String $username = 'kiosk',
   String $hdmi_mode = '97',
   Boolean $hdmi_rpi4 = true,
+  String $resolution = '3840 2160',
 ) {
   package { [
       'firefox',
       'xorg-server',
       'xorg-xinit',
-      'xorg-xrandr',
       'xdotool',
-      'xf86-video-fbdev',
   ]: }
 
   user { $username:
