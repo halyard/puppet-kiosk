@@ -2,11 +2,13 @@
 #
 # @param url sets the page to display
 # @param username sets the username for the kiosk install
-# @param resolution sets the screen size for the kiosk
+# @param width sets the width of the kiosk window
+# @param height sets the height of the kiosk window
 class kiosk (
   String $url,
   String $username = 'kiosk',
-  String $resolution = '3840 2160',
+  Integer $width = 3840
+  Integer $height = 2160,
 ) {
   package { [
       'firefox',

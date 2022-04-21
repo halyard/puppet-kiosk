@@ -6,10 +6,5 @@ xset s noblank
 
 URL='<%= @url %>'
 
-firefox --kiosk "$URL" &
+firefox --width <%= @width %> --height <%= @height %> --kiosk "$URL"
 
-until xdotool search --name ".*Mozilla Firefox" windowsize <%= @resolution %> ; do
-  sleep 1
-done
-
-wait
