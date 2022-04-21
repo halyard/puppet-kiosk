@@ -7,7 +7,7 @@
 class kiosk (
   String $url,
   String $username = 'kiosk',
-  Integer $width = 3840
+  Integer $width = 3840,
   Integer $height = 2160,
 ) {
   package { [
