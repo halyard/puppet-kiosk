@@ -8,8 +8,6 @@ URL='<%= @url %>'
 
 firefox --kiosk "$URL" &
 
-sleep 10
-
 until xdotool search --name ".*Mozilla Firefox" windowsize <%= @resolution %> ; do
   sleep 1
 done
