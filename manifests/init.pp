@@ -46,8 +46,12 @@ class kiosk (
     content => template('kiosk/autologin.erb'),
   }
 
-  file { '/boot/config.txt':
-    ensure  => file,
-    content => template('kiosk/config.txt.erb'),
+  if $facts['is_raspberry_pi'] {
+    package { 'xf86-video-fbdev': }
+
+    file { '/boot/config.txt':
+      ensure  => file,
+      content => template('kiosk/config.txt.erb'),
+    }
   }
 }
