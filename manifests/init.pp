@@ -16,7 +16,6 @@ class kiosk (
       'xorg-xinit',
       'xorg-xset',
       'xdotool',
-      'xf86-video-fbdev',
   ]: }
 
   user { $username:
