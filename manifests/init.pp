@@ -11,7 +11,7 @@ class kiosk (
   Integer $height = 2160,
 ) {
   package { [
-      'chromium',
+      'firefox',
       'xorg-server',
       'xorg-xinit',
       'xorg-xset',
