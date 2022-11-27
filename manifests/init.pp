@@ -16,6 +16,7 @@ class kiosk (
       'xorg-xinit',
       'xorg-xset',
       'xdotool',
+      'unclutter',
   ]: }
 
   user { $username:

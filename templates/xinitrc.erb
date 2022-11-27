@@ -4,5 +4,7 @@ xset -dpms
 xset s off
 xset s noblank
 
+unclutter --fork --start-hidden
+
 firefox "--width=<%= @width %>" "--height=<%= @height %>" --kiosk "<%= @url %>"
 
