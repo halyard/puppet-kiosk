@@ -6,5 +6,5 @@ xset s noblank
 
 unclutter --fork --start-hidden
 
-firefox "--width=<%= @width %>" "--height=<%= @height %>" --kiosk "<%= @url %>"
+chromium "--window-size=<%= @width %>,<%= @height %>" --kiosk "<%= @url %>"
 
