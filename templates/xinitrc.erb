@@ -5,6 +5,7 @@ xset s off
 xset s noblank
 
 unclutter --fork --start-hidden
+xdotool mousemove 0 0
 
 chromium "--window-size=<%= @width %>,<%= @height %>" --kiosk "<%= @url %>"
 
