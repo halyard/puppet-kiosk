@@ -10,7 +10,7 @@ if [ -z $DISPLAY ] && [ $(tty) = /dev/tty1 ] ; then
 else
   export DISPLAY=:0.0
   alias x=xdotool
-  alias xk=xdotool key
-  alias xt=xdotool type
+  alias xk='xdotool key'
+  alias xt='xdotool type'
 fi
 
