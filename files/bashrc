@@ -1,5 +1,7 @@
 # MANAGED BY PUPPET
 
+source ~/.kiosk_config
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -12,5 +14,6 @@ else
   alias x=xdotool
   alias xk='xdotool key'
   alias xt='xdotool type'
+  alias xr='pgrep xinit | xargs kill'
 fi
 
