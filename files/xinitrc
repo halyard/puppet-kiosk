@@ -1,5 +1,7 @@
 #!/usr/bin/sh
 
+source ~/.kiosk_config
+
 xset -dpms
 xset s off
 xset s noblank

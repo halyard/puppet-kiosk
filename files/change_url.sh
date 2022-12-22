@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+source ~/.kiosk_config
+
 arg="$1"
 
 case "$arg" in
