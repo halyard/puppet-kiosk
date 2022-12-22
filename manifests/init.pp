@@ -10,7 +10,7 @@ class kiosk (
   String $username = 'kiosk',
   Integer $width = 3840,
   Integer $height = 2160,
-  String $navigate_version = 'v0.0.1',
+  String $navigate_version = 'v0.0.2',
 ) {
   package { [
       'chromium',
