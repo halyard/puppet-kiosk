@@ -4,13 +4,13 @@ arg="$1"
 
 case "$arg" in
     a)
-        navigate "$KIOSK_URL_A"
+        navigate go "$KIOSK_URL_A"
         ;;
     b)
-        navigate "$KIOSK_URL_B"
+        navigate go "$KIOSK_URL_B"
         ;;
     c)
-        navigate "$KIOSK_URL_C"
+        navigate go "$KIOSK_URL_C"
         ;;
     *)
         echo "No URL available for $arg"

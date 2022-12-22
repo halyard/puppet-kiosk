@@ -6,6 +6,7 @@ xset s noblank
 
 unclutter --fork --start-hidden
 xdotool mousemove 0 0
+xbindkeys
 
 chromium "--window-size=$WINDOW_WIDTH,$WINDOW_HEIGHT" --remote-debugging-port=8080 --kiosk "$KIOSK_URL_A"
 
