@@ -30,14 +30,14 @@ class kiosk (
 
   file { "/home/${username}/.xinitrc":
     ensure => file,
-    source => 'puppet:///modules/kiosk/xinitrc'
+    source => 'puppet:///modules/kiosk/xinitrc',
     owner  => $username,
   }
 
   file { "/home/${username}/.xbindkeysrc":
-    ensure  => file,
-    source  => 'puppet:///modules/kiosk/xbindkeysrc',
-    owner   => $username,
+    ensure => file,
+    source => 'puppet:///modules/kiosk/xbindkeysrc',
+    owner  => $username,
   }
 
   file { "/home/${username}/.bashrc":
@@ -73,7 +73,7 @@ class kiosk (
 
     file { '/boot/config.txt':
       ensure => file,
-      source => 'puppet:///modules/kiosk/rpi_config.txt'
+      source => 'puppet:///modules/kiosk/rpi_config.txt',
     }
   }
 
@@ -87,10 +87,10 @@ class kiosk (
 
   $binfile = '/usr/local/bin/navigate'
   $filename = "navigate_${downcase($facts['kernel'])}_${arch}"
-  $url = "https://github.com/akerl/navigate/releases/download/${version}/${filename}"
+  $url = "https://github.com/akerl/navigate/releases/download/${navigate_version}/${filename}"
 
   exec { 'download navigate':
     command => "/usr/bin/curl -sLo '${binfile}' '${url}' && chmod a+x '${binfile}'",
-    unless  => "/usr/bin/test -f ${binfile} && ${binfile} version | grep '${version}'",
+    unless  => "/usr/bin/test -f ${binfile} && ${binfile} version | grep '${navigate_version}'",
   }
 }
