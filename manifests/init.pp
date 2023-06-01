@@ -56,7 +56,7 @@ class kiosk (
     owner  => $username,
   }
 
-  $hotkey_script = $custom_script == nil ? {
+  $hotkey_script = $custom_script == undef ? {
     true  => file('kiosk/kiosk_hotkey.sh'),
     false => $custom_script,
   }
