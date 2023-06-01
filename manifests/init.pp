@@ -88,7 +88,7 @@ class kiosk (
 
     file { '/boot/config.txt':
       ensure  => file,
-      content => template('kiosk/rpi_config.txt'),
+      content => template('kiosk/rpi_config.txt.erb'),
     }
   }
 
