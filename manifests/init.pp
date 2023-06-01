@@ -5,12 +5,14 @@
 # @param width sets the width of the kiosk window
 # @param height sets the height of the kiosk window
 # @param navigate_version sets the version to install of the navigate CLI
+# @param custom_script sets an alternate script instead of the default navigation hotkey
 class kiosk (
   Array[String, 1, 3] $urls,
   String $username = 'kiosk',
   Integer $width = 3840,
   Integer $height = 2160,
   String $navigate_version = 'v0.0.4',
+  Optional[String] $custom_script = undef,
 ) {
   package { [
       'chromium',
@@ -35,9 +37,9 @@ class kiosk (
   }
 
   file { "/home/${username}/.xbindkeysrc":
-    ensure => file,
-    source => 'puppet:///modules/kiosk/xbindkeysrc',
-    owner  => $username,
+    ensure  => file,
+    content => template('kiosk/xbindkeysrc.erb'),
+    owner   => $username,
   }
 
   file { "/home/${username}/.bashrc":
@@ -46,11 +48,16 @@ class kiosk (
     owner  => $username,
   }
 
-  file { "/home/${username}/.change_url.sh":
-    ensure => file,
-    source => 'puppet:///modules/kiosk/change_url.sh',
-    mode   => '0755',
-    owner  => $username,
+  $hotkey_script = $custom_script == nil ? {
+    true  => file('kiosk/kiosk_hotkey.sh'),
+    false => $custom_script,
+  }
+
+  file { "/home/${username}/.kiosk_hotkey.sh":
+    ensure  => file,
+    content => $hotkey_script,
+    mode    => '0755',
+    owner   => $username,
   }
 
   file { "/home/${username}/.kiosk_config":

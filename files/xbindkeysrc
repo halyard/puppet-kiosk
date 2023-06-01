@@ -1,8 +1,8 @@
-"./.change_url.sh a"
+"./.kiosk_hotkey.sh a"
   XF86AudioPrev
 
-"./.change_url.sh b"
+"./.kiosk_hotkey.sh b"
   XF86AudioPlay
 
-"./.change_url.sh c"
+"./.kiosk_hotkey.sh c"
   XF86AudioNext
