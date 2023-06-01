@@ -37,9 +37,9 @@ class kiosk (
   }
 
   file { "/home/${username}/.xbindkeysrc":
-    ensure  => file,
-    content => template('kiosk/xbindkeysrc.erb'),
-    owner   => $username,
+    ensure => file,
+    source => 'puppet:///modules/kiosk/xbindkeysrc',
+    owner  => $username,
   }
 
   file { "/home/${username}/.bashrc":
