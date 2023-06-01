@@ -6,6 +6,10 @@
 # @param height sets the height of the kiosk window
 # @param navigate_version sets the version to install of the navigate CLI
 # @param custom_script sets an alternate script instead of the default navigation hotkey
+# @param overscan_top sets the top overscan value in pixels
+# @param overscan_bottom sets the bottom overscan value in pixels
+# @param overscan_left sets the left overscan value in pixels
+# @param overscan_right sets the right overscan value in pixels
 class kiosk (
   Array[String, 1, 3] $urls,
   String $username = 'kiosk',
@@ -13,6 +17,10 @@ class kiosk (
   Integer $height = 2160,
   String $navigate_version = 'v0.0.4',
   Optional[String] $custom_script = undef,
+  Optional[Integer] $overscan_top = undef,
+  Optional[Integer] $overscan_bottom = undef,
+  Optional[Integer] $overscan_left = undef,
+  Optional[Integer] $overscan_right = undef,
 ) {
   package { [
       'chromium',
@@ -79,8 +87,8 @@ class kiosk (
     package { 'xf86-video-fbdev': }
 
     file { '/boot/config.txt':
-      ensure => file,
-      source => 'puppet:///modules/kiosk/rpi_config.txt',
+      ensure  => file,
+      content => template('kiosk/rpi_config.txt'),
     }
   }
 
