@@ -5,6 +5,7 @@
 # @param width sets the width of the kiosk window
 # @param height sets the height of the kiosk window
 # @param navigate_version sets the version to install of the navigate CLI
+# @param timezone sets the timezone for the kiosk browser
 # @param custom_script sets an alternate script instead of the default navigation hotkey
 # @param overscan_top sets the top overscan value in pixels
 # @param overscan_bottom sets the bottom overscan value in pixels
@@ -16,6 +17,7 @@ class kiosk (
   Integer $width = 3840,
   Integer $height = 2160,
   String $navigate_version = 'v0.0.4',
+  String $timezone = 'UTC',
   Optional[String] $custom_script = undef,
   Optional[Integer] $overscan_top = undef,
   Optional[Integer] $overscan_bottom = undef,
