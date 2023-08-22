@@ -11,6 +11,7 @@
 # @param overscan_bottom sets the bottom overscan value in pixels
 # @param overscan_left sets the left overscan value in pixels
 # @param overscan_right sets the right overscan value in pixels
+# @param browser sets which browser to use (chromium or firefox)
 class kiosk (
   Array[String, 1, 3] $urls,
   String $username = 'kiosk',
@@ -23,9 +24,10 @@ class kiosk (
   Optional[Integer] $overscan_bottom = undef,
   Optional[Integer] $overscan_left = undef,
   Optional[Integer] $overscan_right = undef,
+  Enum['chromium', 'firefox'] $browser = 'chromium',
 ) {
   package { [
-      'chromium',
+      $browser,
       'xorg-server',
       'xorg-xinit',
       'xorg-xset',
