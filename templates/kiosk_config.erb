@@ -8,7 +8,7 @@ export KIOSK_URL_B="<%= @urls[1] || @urls[0] %>"
 export KIOSK_URL_C="<%= @urls[2] || @urls[0] %>"
 
 <%- if @proxy_server -%>
-export http_proxy='<%= @proxy_server %>'
+export proxy_server='<%= @proxy_server %>'
 <%- end -%>
 <%- if @proxy_bypass_list -%>
 export proxy_bypass_list='<%= @proxy_bypass_list %>'
