@@ -10,5 +10,5 @@ unclutter --fork --start-hidden
 xdotool mousemove 0 0
 xbindkeys
 
-chromium "--window-size=$WINDOW_WIDTH,$WINDOW_HEIGHT" --remote-debugging-port=8080 --kiosk "$KIOSK_URL_A"
+chromium "--window-size=$WINDOW_WIDTH,$WINDOW_HEIGHT" --remote-debugging-port=8080 "--proxy-server=$proxy_server" "--proxy-bypass-list=$proxy_bypass_list" --kiosk "$KIOSK_URL_A"
 

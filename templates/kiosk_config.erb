@@ -7,11 +7,10 @@ export KIOSK_URL_A="<%= @urls[0] %>"
 export KIOSK_URL_B="<%= @urls[1] || @urls[0] %>"
 export KIOSK_URL_C="<%= @urls[2] || @urls[0] %>"
 
-<%- if @proxy -%>
-export http_proxy='<%= @proxy %>'
-export https_proxy='<%= @proxy %>'
+<%- if @proxy_server -%>
+export http_proxy='<%= @proxy_server %>'
 <%- end -%>
-<%- if @no_proxy -%>
-export no_proxy='<%= @no_proxy %>'
+<%- if @proxy_bypass_list -%>
+export proxy_bypass_list='<%= @proxy_bypass_list %>'
 <%- end -%>
 

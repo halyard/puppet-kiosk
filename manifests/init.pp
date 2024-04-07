@@ -11,8 +11,8 @@
 # @param overscan_bottom sets the bottom overscan value in pixels
 # @param overscan_left sets the left overscan value in pixels
 # @param overscan_right sets the right overscan value in pixels
-# @param proxy sets the proxy server to use
-# @param no_proxy sets sites not to proxy
+# @param proxy_server sets the proxy server to use
+# @param proxy_bypass_list sets sites not to proxy
 class kiosk (
   Array[String, 1, 3] $urls,
   String $username = 'kiosk',
@@ -25,8 +25,8 @@ class kiosk (
   Optional[Integer] $overscan_bottom = undef,
   Optional[Integer] $overscan_left = undef,
   Optional[Integer] $overscan_right = undef,
-  Optional[String] $proxy = undef,
-  Optional[String] $no_proxy = undef,
+  Optional[String] $proxy_server = undef,
+  Optional[String] $proxy_bypass_list = undef,
 ) {
   package { [
       'chromium',
