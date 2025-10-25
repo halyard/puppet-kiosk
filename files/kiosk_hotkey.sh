@@ -6,13 +6,13 @@ arg="$1"
 
 case "$arg" in
     a)
-        navigate go "$KIOSK_URL_A"
+        navigate go --ws "ws://localhost:${DEBUG_PORT}" "$KIOSK_URL_A"
         ;;
     b)
-        navigate go "$KIOSK_URL_B"
+        navigate go --ws "ws://localhost:${DEBUG_PORT}" "$KIOSK_URL_B"
         ;;
     c)
-        navigate go "$KIOSK_URL_C"
+        navigate go --ws "ws://localhost:${DEBUG_PORT}" "$KIOSK_URL_C"
         ;;
     *)
         echo "No URL available for $arg"

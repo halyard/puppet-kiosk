@@ -6,13 +6,14 @@
 # @param height sets the height of the kiosk window
 # @param navigate_version sets the version to install of the navigate CLI
 # @param timezone sets the timezone for the kiosk browser
+# @param debug_port sets the remote debugging port to use for chromium
 # @param custom_script sets an alternate script instead of the default navigation hotkey
 # @param overscan_top sets the top overscan value in pixels
 # @param overscan_bottom sets the bottom overscan value in pixels
 # @param overscan_left sets the left overscan value in pixels
 # @param overscan_right sets the right overscan value in pixels
 # @param proxy_server sets the proxy server to use
-# @param proxy_bypass_list sets sites not to proxy
+# @param proxy_bypass_list sets sites not to prox
 class kiosk (
   Array[String, 1, 3] $urls,
   String $username = 'kiosk',
@@ -20,6 +21,7 @@ class kiosk (
   Integer $height = 2160,
   String $navigate_version = 'v0.0.4',
   String $timezone = 'UTC',
+  Integer $debug_port = 8080,
   Optional[String] $custom_script = undef,
   Optional[Integer] $overscan_top = undef,
   Optional[Integer] $overscan_bottom = undef,
