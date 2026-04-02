@@ -31,13 +31,13 @@ class kiosk (
   Optional[String] $proxy_bypass_list = undef,
 ) {
   package { [
-      'chromium',
-      'xorg-server',
-      'xorg-xinit',
-      'xorg-xset',
-      'xdotool',
-      'xbindkeys',
-      'unclutter',
+    'chromium',
+    'xorg-server',
+    'xorg-xinit',
+    'xorg-xset',
+    'xdotool',
+    'xbindkeys',
+    'unclutter',
   ]: }
 
   user { $username:
